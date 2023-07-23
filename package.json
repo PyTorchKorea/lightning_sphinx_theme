@@ -8,7 +8,7 @@
     "bootstrap": "^4.6.1",
     "browserify": "^13.0.0",
     "connect-livereload": "~0.6.0",
-    "grunt": "^1.5.3",
+    "grunt": "^1.4.1",
     "grunt-banner": "^0.6.0",
     "grunt-browserify": "^6.0.0",
     "grunt-contrib-clean": "^1.0.0",
@@ -25,6 +25,7 @@
   "dependencies": {
     "grunt-contrib-sass": "^2.0.0",
     "grunt-sass": "^3.1.0",
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "sass": "^1.64.1"
   }
 }

@@ -490,8 +490,6 @@ window.sideMenus = {
   isFixedToBottom: false,
 
   bind: function() {
-    sideMenus.handleLeftMenu();
-
     var rightMenuLinks = document.querySelectorAll("#pytorch-right-menu li");
     var rightMenuHasLinks = rightMenuLinks.length > 1;
 
@@ -582,8 +580,6 @@ window.sideMenus = {
     $(window).on('resize scroll', function(e) {
       sideMenus.handleNavBar();
 
-      sideMenus.handleLeftMenu();
-
       if (sideMenus.rightMenuIsOnScreen()) {
         sideMenus.handleRightMenu();
       }
@@ -627,19 +623,6 @@ window.sideMenus = {
         closestParentLink.classList.add("expanded");
         sideMenus.expandClosestUnexpandedParentList(closestParentLink);
       }
-    }
-  },
-
-  handleLeftMenu: function () {
-    var windowHeight = utilities.windowHeight();
-    var topOfFooterRelativeToWindow = document.getElementById("docs-tutorials-resources").getBoundingClientRect().top;
-
-    if (topOfFooterRelativeToWindow >= windowHeight) {
-      document.getElementById("pytorch-left-menu").style.height = "100%";
-    } else {
-      var howManyPixelsOfTheFooterAreInTheWindow = windowHeight - topOfFooterRelativeToWindow;
-      var leftMenuDifference = howManyPixelsOfTheFooterAreInTheWindow;
-      document.getElementById("pytorch-left-menu").style.height = (windowHeight - leftMenuDifference) + "px";
     }
   },
 
@@ -1026,7 +1009,7 @@ $(document).ready(function() {
 
         // show the list
         $(this).next("ul").toggle()
-        
+
         sessionStorage.setItem(menuName, "expand");
     }
   });
@@ -1157,6 +1140,5 @@ $(window).scroll(function () {
     }
   });
 });
-
 
 },{"jquery":"jquery"}]},{},[1,2,3,4,5,6,7,8,9,10,"pt-lightning-sphinx-theme"]);
